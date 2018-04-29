@@ -9,6 +9,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h3>Component Parent</h3>
+        <ComponentTest />
+        <hr />
         <h3>Dinamic Data from "containers":</h3>
         <p>Click on car</p>
         <CarsList />
