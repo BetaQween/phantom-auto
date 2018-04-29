@@ -3,11 +3,14 @@ import React, { Component } from 'react';
 class ChildComponent extends Component {
   constructor(props){
     super(props);
-    // this.state = {
-    //   items: this.props.items
-    // };
+    this.state = {
+      newStaticData: +this.props.static
+    };
     this.getDataChange = this.getDataChange.bind(this);
   }
+  componentWillReceiveProps(){
+    this.setState({newStaticData: this.state.newStaticData + 1})
+    }
   getDataChange(){
     console.log(this.props.items);
   }
@@ -15,11 +18,11 @@ class ChildComponent extends Component {
   render() {
     if(this.props.items){
       this.getDataChange();
-    } 
+    }
     return (
       <div className="ChildComponent">
         ChildComponent:
-        <p>{this.props.items}</p>
+        <p>{this.props.items}-{this.state.newStaticData}</p>
       </div>
     );
   }

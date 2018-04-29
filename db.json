@@ -1,65 +1,27 @@
-{
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
-  "staticData": [
-    {
-      "service": "New",
-      "name": "BMW",
-      "age": 3,
-      "vid": [ "Аэрография", "Покраска", "Антикоррозийная обработка"],
-      "id": 1
-    },
-    {
-      "service": "Old",
-      "name": "Volvo",
-      "age": 2,
-      "vid": [ "Аэрография", "Покраска" ],
-      "id": 2
-    },
-    {
-      "service": "Old",
-      "name": "Toyota",
-      "age": 4,
-      "vid": [ "Покраска", "Антикоррозийная обработка" ],
-      "id": 3
-    }
-  ],
   "dynamicData": [
     {
-      "service": "New",
-      "name": "Ford",
-      "age": 3,
-      "vid": [ "Аэрография", "Покраска", "Антикоррозийная обработка"],
+      "Requested steering angles": "0-100%  left/right wheels",
+      "Actual steering angles": "0-100% left/right wheels",
+      "Requested throttle value": "0-100%",
+      "Actual braking power": "0-100%",
+      "Actual RPM": "Numeric value",
+      "Actual throttle value": "0-100%",
+      "Requested braking power": "0-100%",
+      "Actual Vehicle speed": "Numeric value",
+      "Actual latency": "Numeric value",
+      "Vehicle slope": "-30 / +30",
       "id": 1
-    },
+    }
+  ],
+  "staticData": [
     {
-      "service": "Old",
-      "name": "Renaut",
-      "age": 2,
-      "vid": [ "Аэрография", "Покраска" ],
-      "id": 2
-    },
-    {
-      "service": "Old",
-      "name": "Mercedes",
-      "age": 4,
-      "vid": [ "Покраска", "Антикоррозийная обработка" ],
-      "id": 3
+      "Max Steering angles": "Numeric value",
+      "Emergency braking distance": "0 – 100%",
+      "Vehicle width (axis width)": "Numeric value",
+      "Vehicle length (between axis)": "Numeric value",
+      "Front fender distance from front axis": "Numeric value",
+      "Margin of error": "%",
+      "id": 1
     }
   ]
 }

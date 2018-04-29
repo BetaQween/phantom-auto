@@ -5,7 +5,8 @@ class ComponentTest extends Component {
   constructor(){
     super();
     this.state = {
-      data: new Date().toLocaleTimeString()
+      data: new Date().toLocaleTimeString(),
+      staticData: 22
     };
     this.tick = this.tick.bind(this);
   }
@@ -22,7 +23,7 @@ componentDidMount(){
     return (
       <div className="ComponentTest">
         {/* <p>{this.state.data}</p> */}
-        <ChildComponent items={this.state.data}/>
+        <ChildComponent items={this.state.data} static={this.state.staticData}/>
       </div>
     );
   }

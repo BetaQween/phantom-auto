@@ -1,3 +1,4 @@
+import axios from "axios";
 
 export const selectCar = (car) => {
   console.log("You clicked on car: ", car.name);
@@ -6,13 +7,15 @@ export const selectCar = (car) => {
     payload: car
   }
 }
-// export const getDynamicData = () => {
-//   axios.get("http://localhost:3000/dynamicData")
-//   .then((res) => {
-//     console.log(res);
-//   });
-//   return {
-//     type: "GET_DYNAMIC-DATA",
-//     payload: res
-//   }
-// }
+export const getDynamicData = () => dispatch => {
+  let result = [];
+  axios.get("http://localhost:3000/dynamicData")
+  .then((res) => {
+    result = res;
+    console.log(res);
+  });
+  dispatch({
+    type: "GET_DYNAMIC_DATA",
+    payload: result
+  })
+}
