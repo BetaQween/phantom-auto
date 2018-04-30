@@ -13,10 +13,10 @@ class ChildComponent extends Component {
     console.log("call setDynamicData() -" + this.props.dynamic.name);
   }
   componentWillReceiveProps(prevProps){
-    if(this.props.dynamic !== prevProps){
+    if(this.props.dynamic !== prevProps.dynamic){
       this.setDynamicData();
     }
-    if(this.props.static !== prevProps){
+    if(this.props.static !== prevProps.static){
       this.setStaticData();
     }
 
