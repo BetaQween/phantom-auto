@@ -3,34 +3,35 @@ import React, { Component } from 'react';
 class ChildComponent extends Component {
   constructor(props){
     super(props);
-    // this.state = {
-    //   newStaticData: +this.props.static
-    // };
-    // this.getDataChange = this.getDataChange.bind(this);
     this.setStaticData = this.setStaticData.bind(this);
+    this.setDynamicData = this.setDynamicData.bind(this);
   }
-  // componentWillReceiveProps(){
-  //   this.setState({newStaticData: this.state.newStaticData + 1})
-  //   }
-  // getDataChange(){
-  //   console.log(this.props.dynamic.age);
-  // }
   setStaticData(){
-    console.log(this.props.static.aa+1);
+    console.log("call setStaticData() -" + this.props.static.aa);
   }
   setDynamicData(){
-    console.log(this.props.dynamic.a-1);
+    console.log("call setDynamicData() -" + this.props.dynamic.name);
+  }
+  componentWillReceiveProps(prevProps){
+    if(this.props.dynamic !== prevProps){
+      this.setDynamicData();
+    }
+    if(this.props.static !== prevProps){
+      this.setStaticData();
+    }
+
   }
 
   render() {
-    // if(this.props.dynamic){
-    //   this.getDataChange();
-    // }
     return (
       <div className="ChildComponent">
         ChildComponent:
-        {/* <p>{this.props.dynamic.name}-{this.state.newStaticData}</p> */}
-        <p>{this.props.dynamic.a}-{this.props.static.aa}</p>
+        Dynamic name: <p>{this.props.dynamic.name}</p>
+        Dynamic age: <p>{this.props.dynamic.age}</p>
+        Dynamic year: <p>{this.props.dynamic.year}</p>
+        Static aa: <p>{this.props.static.aa}</p>
+        Static bb: <p>{this.props.static.bb}</p>
+        Static cc: <p>{this.props.static.cc}</p>
       </div>
     );
   }
