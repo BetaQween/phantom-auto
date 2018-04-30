@@ -12,17 +12,17 @@ class ChildComponent extends Component {
     this.setState({newStaticData: this.state.newStaticData + 1})
     }
   getDataChange(){
-    console.log(this.props.items);
+    console.log(this.props.dynamic.age);
   }
 
   render() {
-    if(this.props.items){
+    if(this.props.dynamic){
       this.getDataChange();
     }
     return (
       <div className="ChildComponent">
         ChildComponent:
-        <p>{this.props.items}-{this.state.newStaticData}</p>
+        <p>{this.props.dynamic.name}-{this.state.newStaticData}</p>
       </div>
     );
   }
